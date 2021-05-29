@@ -141,7 +141,7 @@ def caesar_cipher3():
     print("The decrypted text is: "+"".join(map(lambda x=input("text: "),y=eval(input("shift: ")): chr(ord(x)+y),x)))
 
 # from https://www.daniweb.com/programming/software-development/threads/358040/one-line-caesar-cipher-help
-caesar_cipher3()
+#caesar_cipher3()
 
 print()
 #קורס צעדים ראשונים במדעי המחשב ותכנות בפייתון, שיעור 2 בוחן שאלה 10.
@@ -162,5 +162,25 @@ else:
     print("WRONG: Sh!al!om! should change to Sh?al?om?Sh?al?om?Sh?al?om? but the code returned", ans)
 
 
+print()
 
+# The coin challange
 
+def combine_coins1(coin, numbers): return ', '.join(map(lambda s, n: s + str(n), [coin for i in numbers], numbers))
+
+print(combine_coins1("$",range(5)))
+
+# another answer with only list comprehension
+def combine_coins2(coin, numbers):    return ', '.join([coin + str(i) for i in numbers])
+print(combine_coins2("$",[1,2,3,4,5]))
+
+#נסו לעקוב אחר הפתרונות ולהבינם.
+# ודאי שמתם לב כי בכל אחד מן הפתרונות שורת הקוד ארוכה, עמוסה ולכן לא במיוחד קריאה.
+# זכרו שבכתיבת קוד חשוב מאוד לשים לב למאפיינים שונים של הקוד, ביניהם מידת הקריאות שלו.
+# לכן לעיתים נעדיף קוד ארוך וברור על פני קוד קצר וארור.
+
+print()
+import random;p = lambda:random.choice('7♪♫♣♠♦♥◄☼☽');[print('|'.join([p(),p(),p()]),end='\r') for i in range(8 ** 5)]
+
+#שרות הקוד הזו, בעצם מגרילה שלושה תווים מהמחזורת הזו מצרפת אותם יחד עם רווח של | בטווח מסויים
+# מתכנתים זכרו: לרוב נעדיף לכתוב קוד קריא על פני קוד קצר!
