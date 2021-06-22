@@ -111,4 +111,14 @@ print("********************")
 
 print()
 
+# count Func' - counting how namy times is a given char in a string
+str16 = "abcdskrwkwalvkaakvls"
+print(str16.count("a"))
 
+print()
+
+# slicing Func'
+
+str17 = "abcdefg"
+print(slice(str17[1:4]))
+print(str17[0:3])
