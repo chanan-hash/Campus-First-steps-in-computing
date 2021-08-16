@@ -34,7 +34,7 @@ def control_digit(ID):
     # we override the previouse 'ones', and putting there the the "ones" of the sum, so we will be able to use it for checking the "check digit"
     ones = s % 10
    # we taking the new "ones" and Subtract it from 10
-    check_digit = 10 - ones  # the number we want to find - 'check digit' "ספרת ביקורת" באנגלית זה
+    check_digit = 10 - ones  # the number we want to find - 'check digit'
     # handling with Extreme case if the sum become a number which can be divided by 10, such as s = 40, so the 'ones' equal to 0
     # and then 10 - 0 = 10, and the check_digit can't be to numbers onlt a one, Other what is the point of the check_digit
     # that why we adding a condition for the calculating
@@ -44,7 +44,6 @@ def control_digit(ID):
         check_digit = 0
 
     return check_digit
-
 
 # Change the current ID and run the code!
 print(control_digit("12345678"))
