@@ -24,7 +24,6 @@ def intersection1(a,b):
 
 print(intersection1([1,2,3,4],[3,4,5]))
 
-
 name = "Chanan"
 age = 22.5
 
@@ -41,14 +40,12 @@ print(inter_l(l1,l2))
 op = set(l1+l2)
 print(op)
 
-
-
 #mission 1.3.2
 
 def is_prime(n):
     if_prime = ["Prime" if x%x == 0 and x%1 == 0  else "Not Prime" for x in n]
     return  if_prime
-#print(is_prime(5))
+# print(is_prime(5))
 
 def is_prime_v2(number):
     if number%number ==0 and number%1==0:
@@ -57,13 +54,12 @@ def is_prime_v2(number):
         print("Not Prime")
 # it is not so correct because it ca stil be divided in more number like four
 
-
 def is_prime_v3(x):
 # prime_list = [x for x in range(10, 11) for y in range(2,x) if x % x == 0 and x % 1 == 0 and x % y != 0]
     return [x for x in range(10, 11) for y in range(2,x) if x % x == 0 and x % 1 == 0 and x % y != 0]
-#print(is_prime_v3(4))
+# print(is_prime_v3(4))
 print()
-#mission 1.3.3
+# mission 1.3.3
 def is_funny(string):
     for char in string:
         if char != 'h' and char != 'a':
@@ -72,16 +68,14 @@ def is_funny(string):
 
 # make it in one liner
 string = "hahahahahaha"
-#is_funny1 = [for char in string if char !="a" if char !="h"]
+# is_funny1 = [for char in string if char !="a" if char !="h"]
 
 # we can put it in a function
 print()
-#mission 1.3.4
+# mission 1.3.4
 password = "sljmai ugrf rfc ambc: lglc dmsp mlc rum"
 
 def caesar_code(s):
-## נמיר אתר התו למספר נוסיף לו 2, על מנת שנוכל להזיז את התו שני צעדים קדימה,
-# ואחר מכן נמיר בחזרה את המספר החדש לתו בחזרה. שהוא בעצם התו/האות שנמצא שני צעדים קדימה
     st = ""
     for i in s:
         i = s.replace(i,chr(ord(i)+2))
@@ -116,7 +110,7 @@ def caesar_cipher(text,s):
     return result
 
     # from https://www.tutorialspoint.com/cryptography_with_python/cryptography_with_python_caesar_cipher.htm
-    #from  https://www.geeksforgeeks.org/caesar-cipher-in-cryptography/
+    # from  https://www.geeksforgeeks.org/caesar-cipher-in-cryptography/
 print(caesar_cipher(password,2))
 
 # in one line:
@@ -127,16 +121,6 @@ print()
 def caesar_cipher2():
     print("The decrypted text is: "+"".join(map(lambda x: chr(ord(x)+y),x)))
 
-# הסבר לרעיון של הדבר
-
-# ע"י map אני אומר שאני רוצה להפעיל על כל הרשימה (או שניים) פעולה מסויימת
-# הפעולה הזאת תהיה פעולה קצרה ע"י למבדה
-# הפעולה תקבל תו, תמיר אותו למספר ע"י ord תוסיף לו שניים, על מנת שנקדם אותו קדימה בצורה המספרית שלו (ASCII) עיין בנושא הזה
-# בקורס צעדים ראשונים במדעי המחשב ותכנות מסבירים על הנושא הזה, בגדול לכל תו ואות יש ייצוג מספרי שאותו אחרי זה ניתן להמיר לשפה בינארית ובכך וקבל בעצם אות שמומרת לשפה בינארית
-# אחרי זה ממירים אותו בחזרה לתו ע"י chr שממיר מספר לאות
-# ואותו ע"י join אנחנו משרשרים לרשימה ריקה שעשינו
-# ואת כל זה מפעילילם על x מסוים שהוא הפרמטר (לא הפעולה) ש map צריכה לקבל (היא צריכה לקבל פרמטר/רשימה, ופעולה שהיא תפעל עליהם כזכור
-
 def caesar_cipher3():
     print("The decrypted text is: "+"".join(map(lambda x=input("text: "),y=eval(input("shift: ")): chr(ord(x)+y),x)))
 
@@ -144,8 +128,7 @@ def caesar_cipher3():
 #caesar_cipher3()
 
 print()
-#קורס צעדים ראשונים במדעי המחשב ותכנות בפייתון, שיעור 2 בוחן שאלה 10.
-# לקח לי זמן לשבת על הפונקציה הזאת אבל ב"ה פתרתי את זה אחרי כמה נסיונות
+# From the course "First steps in computing and python" lesson 2, exam, question 10
 def mult_and_replace(string):
     # delete pass and fill in your code below
     x = str.count(string,"!")
@@ -174,13 +157,5 @@ print(combine_coins1("$",range(5)))
 def combine_coins2(coin, numbers):    return ', '.join([coin + str(i) for i in numbers])
 print(combine_coins2("$",[1,2,3,4,5]))
 
-#נסו לעקוב אחר הפתרונות ולהבינם.
-# ודאי שמתם לב כי בכל אחד מן הפתרונות שורת הקוד ארוכה, עמוסה ולכן לא במיוחד קריאה.
-# זכרו שבכתיבת קוד חשוב מאוד לשים לב למאפיינים שונים של הקוד, ביניהם מידת הקריאות שלו.
-# לכן לעיתים נעדיף קוד ארוך וברור על פני קוד קצר וארור.
-
 print()
 import random;p = lambda:random.choice('7♪♫♣♠♦♥◄☼☽');[print('|'.join([p(),p(),p()]),end='\r') for i in range(8 ** 5)]
-
-#שרות הקוד הזו, בעצם מגרילה שלושה תווים מהמחזורת הזו מצרפת אותם יחד עם רווח של | בטווח מסויים
-# מתכנתים זכרו: לרוב נעדיף לכתוב קוד קריא על פני קוד קצר!
