@@ -8,10 +8,8 @@ s7 = "Janice"
 s8 = "Jo"
 
 def max_name(s1,s2):
-# כאשר זה בקובץ אפשר בעצם לעשות לולאה שרצה על הקובץ ומחזירה את הערך הגדול ביותר
 # for i in file:
 #    return max(i,i+1)
-# או משהו דומה לזה
     return max(s1,s2)
 
 print(max_name(s1,s2))
