@@ -7,21 +7,6 @@
 # to understand idea look it on the link above
 # here we will just have the Functions
 
-# The psacode:
-'''
-נתחיל. הנה הפסאודו קוד עבור repeat3:
-
-קידוד בקוד חזרה עם 3 חזרות (קלט: הודעה msg שהיא מחרוזת ביטים)
-
-          1 הגדר מחרוזת ריקה result (זו מחרוזת הפלט)
-2 לכל ביט בהודעה המקורית msg:
-2.1 הוסף ל-result את הביט הנוכחי משוכפל 3 פעמים
-                                    3 החזר את result
-מכאן למימוש בפייתון הדרך קצרה.
-
-'''
-
-
 # Do not change the existing code, only fill in line 6 after result =
 def repeat3(msg):
     result = ""
@@ -75,7 +60,6 @@ def repeat(msg,k):
     #    print(result)
     return result
 
-
 # Modify the code as follows:
 #   Change the function name to repeat
 #   Add a second input variable k after msg
@@ -114,40 +98,7 @@ print("********************")
 print("Tests concluded, add more tests of your own below!")
 print("********************")
 
-"""
-כמה הבהרות:
-הלולאה שלנו רצה על כל תו במחרוזת הביטים msg.
-בכל פעם, ניגשים לאחד התווים שהוא או "0" או "1".
-קוראים לתו הזה bit, ונכנסים לגוף הלולאה.
-בגוף הלולאה משכפלים את bit 3 פעמים ע"י אופרטור השכפול למחרוזות (ולרשימות),
-ומשרשרים את התוצאה למחרוזת result.
-"""
-
 ### restore ###
-
-# The psacode:
-"""
-1 הגדר מחרוזת ריקה result (זו מחרוזת הפלט, שאמורה להיות ההודעה המקורית) 
-2 לכל שלישיית ביטים בקלט bits:                                          
-2.1 אם יש יותר "0" מ-"1":                                           
-2.1.1 שרשר ל-result את "0"                                      
-2.2 אחרת (כלומר יש יותר "1"):                                       
-2.2.1 שרשר ל-result את "1"                                      
-                                                        3. החזר את result
-איך נממש זאת בפייתון? תזכורת קצרה שתסייע לנו:
-
-כדי לעבור על רצף הביטים ולהסתכל על 3 ביטים בכל פעם, כדאי להשתמש בלולאת for על range,
-ולהגדיר את ה-range להתקדם בקפיצות של 3 בכל פעם, כפי שראינו בשיעור 2.
-זה ייראה כך:
-
-for i in range(0, len(bits), 3):
-למשל, עבור הרצף:
-bits = "000111111"
-
-שאורכו 9, הערכים ש-i יקבל הם 0, 3, ו-6.
-באופן כזה, בכל פעם i הוא האינדקס של תחילת השלשה, והשלשה עצמה נמצאת בכל פעם באינדקסים i+1 ,i ו-i+2 .
-למשל, עבור i=0, השלשה באינדקסים אלו היא "000", עבור i=3 השלשה היא "111" וגם עבור i=6 השלשה היא "111".
-"""
 
 def restore3(bits):
     result = ""
@@ -184,43 +135,6 @@ def restore3_2(bits,a):
 
 # we need a loop which doing k iterations using something called in python --- "slicing"
 
-'''
-1. אתחל מחרוזת ריקה בשם restore = ""
-
-2. עבור על המחרוזת msg בקפיצות בגודל k:
-
-    2.1. לכל רצף k_bits באורך k במחרוזת msg:
-
-        2.1.1. אם יש ב-k_bits יותר מופעים של "1" מאשר "0":
-
-            2.1.1.1. שרשר ל-restore את התו "1"
-
-        2.1.2. אחרת
-
-            2.1.2.1. שרשר ל-restore את התו "0"
-
-3. החזר את המחרוזת restore
-
-לפניכם חלונית קודבורד בה עליכם לממש את הפונקציה restore(msg, k).
-
-
-להלן מספר הנחיות וטיפים:
-
-הזכרו בפונקציה restore3 אותה כבר ראינו. 
-אם אתם רוצים, העתיקו פונקציה זו לחלונית הקודבורד וחשבו על השינויים השונים שיש לבצע בה על מנת להתאים אותה למקרה הכללי
-
-חיתוך תת-מחרוזת באורך k תווים מהמחרוזת msg בין האינדקסים i ו-k+i ניתן לבצע במספר דרכים, להלן שתי דרכים שונות לבצע פעולה זו:
-
-ניתן להשתמש בלולאה מקוננת בתוך הלולאה הראשית.
- אתחלו מחרוזת k_bits ריקה לפני הלולאה המקוננת, ובלולאה המקוננת עברו על האינדקסים מ-i ועד i+k (לא כולל!) ושרשרו את התווים הללו לתוך המחרוזת k_bits
-
-ניתן להשתמש בפעולת slicing (אותה לא למדנו בקורס) -
-פעולה זו מקבלת מחרוזת, אינדקס התחלה ואינדקס סיום ומחזירה את תת-המחרוזת בין אינדקס ההתחלה והסיום (לא כולל). 
- במקרה שלנו, זה יראה כך:
-
-k_bits = msg[i:i+k]
-
-'''
 # Now we will do 'restore' Func' in a generalization way:
 # we used the second wat with slicing operation and not with nested loop
 def restore(msg, k):
@@ -248,8 +162,6 @@ def restore_2(msg, k):
         else:
             result = result + "1"
     return result
-
-
 
 ### TESTS ###
 
@@ -316,17 +228,6 @@ print()
 
 # 5.4.5
 # https://courses.campus.gov.il/courses/course-v1:TAU+ACD_TAU_cs101x+2020_1/courseware/8930998f65ab4226bf548730b63302fd/36e348653c954c5994d70d4171ab9321/?child=first
-# psacode for restoring more than one bit, but rather a whole massage:
-"""
-
-1. אתחלו מחרוזת ריקה result = ""
-2. עברו על תווי msg בקפיצות באורך k :
-
-2.1 לכל רצף block באורך k בהודעה msg:
-2.1.1 שחזרו את k_bits באמצעות restore_single והוסיפו את התוצאה ל-restore
-3. החזירו את result
-
-"""
 
 # here we dividing the string in part according to k. we starting for a given index (i) till the index plus k.
 def get_block(msg, i, k):
@@ -369,7 +270,6 @@ def restore(msg, k):
         result = result + bit
     return result
 
-
 def get_block(msg, i, k):
     # We initialize an empty string
     k_bits = ""
@@ -380,7 +280,6 @@ def get_block(msg, i, k):
 
     # We return the result
     return k_bits
-
 
 def restore_single(single_msg):
     # We initialize counters
@@ -398,7 +297,6 @@ def restore_single(single_msg):
         return "1"
     else:
         return "0"
-
 
 ### TESTS ###
 
@@ -482,7 +380,6 @@ print("********************")
 print("Tests concluded, add more tests of your own below!")
 print("********************")
 
-
 print()
 # answer for question 9 in the test for lesson 5
 
@@ -507,7 +404,6 @@ def rep_and_parity(msg):
         result += "1"
 
     return result
-
 
 ### TESTS ###
 
