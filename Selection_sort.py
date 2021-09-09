@@ -21,7 +21,6 @@ L = [1, 4, 5, 2, 3]
 result = selection_sort(L)
 print(result)
 
-
 print()
 # selection sort on the same way but usig max
 # we are going to get sorted list from the lowest to the biggest but isted usig min() we we will use max()
@@ -38,7 +37,6 @@ def selection_sort2(L):
         # just to add the value in a square brackets into tha list, using the operator (+)
         sorted_L = [maximum] + sorted_L
     return sorted_L
-
 
 import random
 
@@ -65,7 +63,6 @@ print()
 import random
 import time
 
-
 def generate_random_list(n):
     ''' returns a list of size n with random integers between 0 and 999999
         Uses random.randint(a,b) which randomly picks an integer between a and b
@@ -73,7 +70,6 @@ def generate_random_list(n):
 # and the lenghth of the list is going to be n, and the values in the list itself eill be number between 0 - 999999
     # that means, that if n us equal to 1000, we will have a list with 1000 values between 0 - 999999
     return [random.randint(0, 999999) for i in range(n)]  # a short way to generate the list
-
 
 def selection_sort(L):
     ''' return a sorted copy of L '''
@@ -84,7 +80,6 @@ def selection_sort(L):
         L.remove(minimum)
         sorted_L.append(minimum)
     return sorted_L
-
 
 for n in [1000, 2000, 4000]:
     lst = generate_random_list(n)
@@ -101,17 +96,12 @@ for n in [1000, 2000, 4000]:
 
 # and if we use the inbuilt function "sorted" it will reduce the compelxibility significantly
 
-'''לסיום, כדאי להזכיר שפייתון מספק פונקציה מובנית בשם sorted, שבהינתן רשימה (וכמה סוגים נוספים של טיפוסים בפייתון) מחזירה עותק ממוין שלה.
- כלומר היא עושה בדיוק את מה שעושה selection_sort שלנו, אך פרטי פעולתה שונים מאוד, מסובכים בהרבה, והיא גם הרבה יותר יעילה. 
- לפיכך, בעת שתרצו למיין רשימה, עדיף לכם להשתמש בפונקציה sorted של פייתון.'''
-
 y = 100000
 lst = generate_random_list(y)
 
 start = time.clock()
 lst3 = sorted(lst) # lst3 not used
 end = time.clock()
-
 
 # fron the Test on end of lesson four, questoin 7:
 # Function that chacks if the list is sorted
@@ -167,12 +157,10 @@ else:
 import inspect
 import ast
 
-
 def no_sorted(f):
     call_names = [c.func.id for c in ast.walk(ast.parse(inspect.getsource(f)))
                   if hasattr(c, 'func') and hasattr(c.func, 'id') and isinstance(c, ast.Call)]
     return not 'sorted' in call_names
-
 
 print("********************")
 print("\n\nNow checking your implementation:")
@@ -192,21 +180,6 @@ print()
 # for example - [6, 8, 2, 4, 5] and k = 3
 # we will get 5
 # we depending on the psa-code:
-'''את הבעיה הזו ניתן לפתור באופן הדומה לדרך בה מימשנו את אלגוריתם מיון הבחירה - 
-נמצא שוב ושוב איבר מינימלי ברשימה ונמחק אותו מהרשימה, ולאחר בדיוק k איטרציות נגיע לאיבר אותו אנחנו מחפשים. 
-למשל, עבור הרשימה [6, 8, 2, 4, 5] , ועבור k=3, נחפש מינימום ברשימה 3 פעמים. בפעם הראשונה זהו 2, בפעם השניה זהו 4. 
-בפעם השלישית זהו 5 (אפשר למחוק גם אותו, זה לא משנה), ונחזיר אותו.
- להלן ניסוח של אלגוריתם זה כפסאודו-קוד:
-
-:בצע במשך k פעמים
-מצא איבר מינימלי ברשימה 1.1
-    מחק את האיבר שמצאת (בשלב הקודם) מהרשימה 1.2
-החזר את המינימום האחרון שנמצא 2
-הערות:
-
-ניתן להניח כי ברשימה אין חזרות (כלומר, מספרים אשר מופיעים יותר מפעם אחת)
-ניתן להניח כי ברשימה ישנם לפחות k איברים (אחרת אין לבעיה פתרון)
-המחיקה האחרונה מיותרת, אבל גם לא נורא אם נבצע אותה'''
 # in the link question 10
 # https://courses.campus.gov.il/courses/course-v1:TAU+ACD_TAU_cs101x+2020_1/courseware/0abbdfc3b6b04237a1e9fa2bc58227b8/27a0ec43965b46fd8b5d59f64f7af6a6/?child=first
 
