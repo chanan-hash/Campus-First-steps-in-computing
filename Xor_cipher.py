@@ -1,4 +1,7 @@
 # from the course: "first steps in computering and python", 6.8.2
+# https://courses.campus.gov.il/courses/course-v1:TAU+ACD_TAU_cs101x+2020_1/courseware/e4908534f9904cd4b6ee0e51f1c99b21/45679609ec6442549af35b475df84cec/
+
+# The xor cipher refers to bits - '1' and '0', it encrypts the bit part of the message and not the letters themselves
 
 # Way One
 
